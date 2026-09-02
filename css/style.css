@@ -29,6 +29,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
 }
 
 section[id] {
@@ -189,6 +194,13 @@ ul {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0;
+}
+
+/* 이미지 로고 (밝은 버전 — 어두운 헤더용) */
+.logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .nav {
@@ -823,9 +835,48 @@ ul {
   align-items: start;
 }
 
+.about-layout-head,
+.about-layout-body {
+  min-width: 0;
+}
+
 .about-layout-head {
   position: sticky;
   top: 160px;
+}
+
+.greeting-portrait {
+  margin: 30px 0 0;
+}
+
+.greeting-portrait-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-navy);
+  border: 1px solid var(--color-border);
+}
+
+.greeting-portrait-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 가장자리 흐림·잡요소를 잘라내고 인물 중심으로 크롭 (컬러 유지) */
+  object-position: 50% 18%;
+}
+
+.greeting-portrait figcaption {
+  margin-top: 12px;
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.greeting-portrait figcaption strong {
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .greeting-lead {
@@ -850,6 +901,7 @@ ul {
 }
 
 .greeting-sign {
+  clear: both;
   margin-top: 32px !important;
   color: var(--color-text) !important;
   font-weight: 300;
@@ -985,6 +1037,453 @@ ul {
 }
 
 /* ============================================
+   제품 페이지 (products.html)
+   ============================================ */
+.prod-cat {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  scroll-margin-top: 150px;
+}
+
+.prod-cat-head {
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.prod-cat-head .section-title {
+  margin-bottom: 14px;
+}
+
+.prod-cat-desc {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.prod-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.prod-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.prod-item:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(13, 20, 32, 0.06);
+}
+
+.prod-item h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.prod-item .en {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+.prod-item p {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* 대표 제품 강조 (에스컬레이터 체인) */
+.prod-cat--featured {
+  border-bottom: none;
+  background: linear-gradient(160deg, var(--color-black) 0%, var(--color-navy) 100%);
+  color: var(--color-text-inverse);
+}
+
+.prod-cat--featured .section-title {
+  color: var(--color-text-inverse);
+}
+
+.prod-cat--featured .prod-cat-desc {
+  color: var(--color-text-inverse-muted);
+}
+
+.prod-cat--featured .prod-item {
+  background: rgba(244, 242, 238, 0.03);
+  border-color: rgba(244, 242, 238, 0.14);
+}
+
+.prod-cat--featured .prod-item:hover {
+  border-color: rgba(201, 161, 90, 0.5);
+  box-shadow: none;
+}
+
+.prod-cat--featured .prod-item h3 {
+  color: var(--color-text-inverse);
+}
+
+.prod-cat--featured .prod-item p {
+  color: var(--color-text-inverse-muted);
+}
+
+/* 카탈로그 다운로드 */
+.catalog {
+  background: var(--color-bg);
+}
+
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.catalog-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.catalog-list a:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.catalog-list .ext {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+.catalog-list a:hover .ext {
+  color: var(--color-gold);
+}
+
+/* ============================================
+   문의하기 (contact.html)
+   ============================================ */
+.contact-section {
+  background: var(--color-bg);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 44px 40px;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.field label .req {
+  color: var(--color-gold);
+  margin-left: 3px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  font: inherit;
+  font-weight: 300;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  background: var(--color-surface);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+/* 스팸 방지용 숨김 필드 */
+.field-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 0.84rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.form-agree input {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--color-gold);
+}
+
+.contact-form .btn {
+  width: 100%;
+}
+
+.form-status {
+  margin: 18px 0 0;
+  font-size: 0.88rem;
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.is-success {
+  color: #1f7a3d;
+}
+
+.form-status.is-error {
+  color: #b23b3b;
+}
+
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-method {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+a.contact-method:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.contact-method .cm-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.contact-method .cm-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.contact-method .cm-sub {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.contact-method--kakao {
+  background: #fee500;
+  border-color: #fee500;
+}
+
+.contact-method--kakao .cm-label {
+  color: #6b5300;
+}
+
+.contact-method--kakao .cm-value {
+  color: #191600;
+}
+
+.contact-method--kakao .cm-sub {
+  color: #7a6a1e;
+}
+
+/* ============================================
+   계열사 · 언어 전환 바 (topbar)
+   ============================================ */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  height: 40px;
+  background: #06080b;
+  border-bottom: 1px solid rgba(244, 242, 238, 0.08);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand-tabs {
+  display: flex;
+  height: 100%;
+}
+
+.brand-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(244, 242, 238, 0.5);
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.brand-tab:first-child {
+  padding-left: 0;
+}
+
+.brand-tab:hover {
+  color: var(--color-text-inverse);
+}
+
+.brand-tab.is-active {
+  color: var(--color-text-inverse);
+  border-bottom-color: var(--color-gold);
+}
+
+.brand-tab.is-active::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(244, 242, 238, 0.25);
+}
+
+.lang-switch a {
+  color: rgba(244, 242, 238, 0.5);
+  transition: color var(--transition);
+}
+
+.lang-switch a:hover {
+  color: var(--color-text-inverse);
+}
+
+.lang-switch a.is-active {
+  color: var(--color-gold);
+}
+
+/* topbar 가 있는 페이지: 헤더를 40px 아래로 */
+.has-topbar .site-header {
+  top: 40px;
+}
+
+.has-topbar section[id] {
+  scroll-margin-top: 140px;
+}
+
+.has-topbar .hero-inner {
+  padding-top: 124px;
+}
+
+/* ============================================
+   그린셀 (brand-greencell) — 포인트 컬러 교체
+   ============================================ */
+body.brand-greencell {
+  --color-gold: #2f9e54;
+  --color-gold-light: #57bd79;
+}
+
+body.brand-greencell .hero-media {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(47, 158, 84, 0.18), transparent 42%),
+    linear-gradient(160deg, var(--color-black) 0%, var(--color-navy) 48%, var(--color-navy-2) 100%);
+}
+
+body.brand-greencell .product-flag {
+  border-color: rgba(47, 158, 84, 0.5);
+}
+
+body.brand-greencell .vision-item:hover {
+  border-color: rgba(47, 158, 84, 0.5);
+}
+
+/* ============================================
    Responsive
    ============================================ */
 
@@ -1011,6 +1510,15 @@ ul {
     position: static;
   }
 
+  .greeting-portrait {
+    max-width: 320px;
+    margin: 24px auto 8px;
+  }
+
+  .greeting-portrait figcaption {
+    text-align: center;
+  }
+
   .vision-grid {
     grid-template-columns: 1fr;
   }
@@ -1018,11 +1526,48 @@ ul {
   .location-grid {
     grid-template-columns: 1fr;
   }
+
+  .prod-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 @media (max-width: 760px) {
   .br-desktop {
     display: none;
+  }
+
+  .hero-eyebrow,
+  .page-hero .hero-eyebrow {
+    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+    overflow-wrap: break-word;
+  }
+
+  .brand-tab {
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .brand-tab.is-active::before {
+    margin-right: 5px;
+  }
+
+  .has-topbar .hero-inner {
+    padding-top: 112px;
+  }
+
+  .logo-img {
+    height: 28px;
   }
 
   .nav {
@@ -1100,6 +1645,11 @@ ul {
     min-height: 300px;
   }
 
+  .greeting-portrait {
+    max-width: 280px;
+    margin: 20px auto 4px;
+  }
+
   .product-card--featured {
     grid-template-columns: 1fr;
     padding: 36px 28px;
@@ -1107,6 +1657,23 @@ ul {
 
   .product-grid-sub {
     grid-template-columns: 1fr;
+  }
+
+  .prod-cat {
+    padding: 72px 0;
+  }
+
+  .prod-items {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .value-row {

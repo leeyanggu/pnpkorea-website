@@ -1,0 +1,9 @@
+# 문의 폼 / 관리자
+/config.php
+/contact-log.tsv
+/vendor/
+/composer.lock
+
+# OS / 편집기
+Thumbs.db
+.DS_Store

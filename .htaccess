@@ -1,0 +1,13 @@
+# ============================================================
+#  민감 파일 직접 접근 차단 (Apache 2.4 / 카페24)
+# ============================================================
+<FilesMatch "\.(sql|tsv|md)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(config|config\.sample)\.php$">
+    Require all denied
+</FilesMatch>
+
+# 디렉터리 목록 표시 끄기
+Options -Indexes

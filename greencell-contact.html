@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도입 문의 | 그린셀</title>
+  <meta name="description" content="그린셀 컨테이너팜 도입, 기술이전·창업, 백화고 관련 문의를 남겨주세요. 전화·이메일·카카오톡으로도 상담 가능합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="has-topbar brand-greencell">
+  <!-- 계열사 · 언어 전환 -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-tabs" aria-label="계열사 선택">
+        <a href="index.html" class="brand-tab">피앤피코리아</a>
+        <a href="greencell.html" class="brand-tab is-active" aria-current="page">그린셀</a>
+      </div>
+      <div class="lang-switch" aria-label="언어 선택">
+        <a href="greencell-contact.html" class="is-active" aria-current="page">KO</a>
+        <span aria-hidden="true">·</span>
+        <a href="greencell-contact.en.html">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header is-scrolled" id="siteHeader">
+    <div class="container header-inner">
+      <a href="greencell.html#home" class="logo">
+        <img src="images/greencelllogo-light.png" alt="그린셀" class="logo-img" />
+      </a>
+      <nav class="nav" id="primaryNav">
+        <a href="greencell.html#intro">그린셀 소개</a>
+        <a href="greencell.html#solutions">솔루션</a>
+        <a href="greencell.html#values">왜 그린셀</a>
+        <a href="greencell-contact.html" class="is-active">문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <p class="hero-eyebrow">CONTACT</p>
+        <h1 class="page-hero-title">도입 문의</h1>
+        <p class="page-hero-desc">
+          설치 공간, 재배하려는 작물, 운영 계획을 남겨주시면
+          담당자가 검토 후 도입 절차와 예상 비용을 안내해 드립니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 문의 폼 + 연락 수단 -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <form class="contact-form reveal" id="contactForm" action="contact.php" method="post" novalidate>
+            <input type="hidden" name="brand" value="greencell" />
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-name">이름 <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="cf-company">회사·농장명</label>
+                <input type="text" id="cf-company" name="company" autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-phone">연락처 <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="010-0000-0000" required />
+              </div>
+              <div class="field">
+                <label for="cf-email">이메일 <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-type">문의 유형</label>
+              <select id="cf-type" name="type">
+                <option value="컨테이너팜 도입">컨테이너팜 도입</option>
+                <option value="기술이전 / 창업">기술이전 / 창업</option>
+                <option value="백화고 구매 / 납품">백화고 구매 / 납품</option>
+                <option value="기타">기타</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="cf-message">문의 내용 <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="cf-message" name="message" rows="6"
+                placeholder="설치 예정 지역·공간, 재배 희망 작물, 대수, 운영 계획(자가 재배 / 창업 등)을 적어주시면 더 정확히 안내해 드립니다." required></textarea>
+            </div>
+
+            <!-- 스팸 방지용 숨김 필드 (사람은 비워둠) -->
+            <div class="field-hp" aria-hidden="true">
+              <label for="cf-website">웹사이트</label>
+              <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="form-agree">
+              <input type="checkbox" name="agree" required />
+              <span>
+                개인정보 수집·이용에 동의합니다.
+                (수집항목: 이름·연락처·이메일·회사명 / 목적: 문의 접수 및 응대 / 보유기간: 3년)
+              </span>
+            </label>
+
+            <button type="submit" class="btn btn-primary">문의 보내기</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-aside reveal">
+            <a href="tel:03116927751" class="contact-method">
+              <span class="cm-label">Tel</span>
+              <span class="cm-value">031-692-7751</span>
+              <span class="cm-sub">평일 08:00 ~ 18:00</span>
+            </a>
+            <a href="mailto:pnp7751@naver.com" class="contact-method">
+              <span class="cm-label">E-mail</span>
+              <span class="cm-value">pnp7751@naver.com</span>
+              <span class="cm-sub">Fax 031-692-7752</span>
+            </a>
+            <!-- TODO: 그린셀 카카오톡 채널 개설 후 href 를 채널 상담 주소로 교체 -->
+            <a href="#" class="contact-method contact-method--kakao" id="kakaoLink" target="_blank" rel="noopener">
+              <span class="cm-label">KakaoTalk</span>
+              <span class="cm-value">카카오톡으로 문의</span>
+              <span class="cm-sub">채널 연결 예정</span>
+            </a>
+            <div class="contact-method contact-method--plain">
+              <span class="cm-label">Address</span>
+              <span class="cm-value">그린셀 · 안성</span>
+              <span class="cm-sub">경기도 안성시 공도읍 용머리안길 59 (용두리 462-9)</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark">GC</span>
+          <span>그린셀</span>
+        </div>
+        <p class="footer-desc">자동화 · ICT 기반 스마트 컨테이너팜</p>
+      </div>
+      <div class="footer-info">
+        <!-- TODO: 그린셀 법인 상호·대표·사업자등록번호 확정 후 교체 -->
+        <p>그린셀 (GreenCell)<span class="sep">|</span>스마트팜 · 컨테이너팜 사업</p>
+        <p>주소 경기도 안성시 공도읍 용머리안길 59 (용두리 462-9)</p>
+        <p>
+          TEL 031-692-7751<span class="sep">|</span>FAX 031-692-7752<span class="sep">|</span>E-mail pnp7751@naver.com
+        </p>
+        <p>업무시간 평일 08:00 ~ 18:00</p>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> 그린셀. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | GreenCell</title>
+  <meta name="description" content="Get in touch about GreenCell container farms, technology transfer and start-up support, or premium shiitake supply. Phone, e-mail and KakaoTalk also available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="has-topbar brand-greencell">
+  <!-- Affiliate / Language switch -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-tabs" aria-label="Select company">
+        <a href="index.en.html" class="brand-tab">P&amp;P KOREA</a>
+        <a href="greencell.en.html" class="brand-tab is-active" aria-current="page">GreenCell</a>
+      </div>
+      <div class="lang-switch" aria-label="Select language">
+        <a href="greencell-contact.html">KO</a>
+        <span aria-hidden="true">·</span>
+        <a href="greencell-contact.en.html" class="is-active" aria-current="page">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header is-scrolled" id="siteHeader">
+    <div class="container header-inner">
+      <a href="greencell.en.html#home" class="logo">
+        <img src="images/greencelllogo-light.png" alt="GreenCell" class="logo-img" />
+      </a>
+      <nav class="nav" id="primaryNav">
+        <a href="greencell.en.html#intro">About</a>
+        <a href="greencell.en.html#solutions">Solutions</a>
+        <a href="greencell.en.html#values">Why GreenCell</a>
+        <a href="greencell-contact.en.html" class="is-active">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <p class="hero-eyebrow">CONTACT</p>
+        <h1 class="page-hero-title">Get in Touch</h1>
+        <p class="page-hero-desc">
+          Tell us about your installation space, the crop you want to grow and your
+          operating plan &mdash; we will review it and walk you through the process and
+          estimated cost.
+        </p>
+      </div>
+    </section>
+
+    <!-- Form + contact methods -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <form class="contact-form reveal" id="contactForm" action="contact.php" method="post" novalidate>
+            <input type="hidden" name="brand" value="greencell" />
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="cf-company">Company / Farm</label>
+                <input type="text" id="cf-company" name="company" autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="+82 10 0000 0000" required />
+              </div>
+              <div class="field">
+                <label for="cf-email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-type">Inquiry Type</label>
+              <select id="cf-type" name="type">
+                <option value="Container farm">Container farm</option>
+                <option value="Technology transfer / start-up">Technology transfer / start-up</option>
+                <option value="Shiitake supply">Shiitake supply</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="cf-message" name="message" rows="6"
+                placeholder="Region and space for installation, target crop, number of units, and operating plan (self-cultivation / start-up, etc.)." required></textarea>
+            </div>
+
+            <!-- Spam trap (leave empty) -->
+            <div class="field-hp" aria-hidden="true">
+              <label for="cf-website">Website</label>
+              <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="form-agree">
+              <input type="checkbox" name="agree" required />
+              <span>
+                I agree to the collection and use of my personal information.
+                (Items: name, phone, e-mail, company / Purpose: handling this inquiry / Retention: 3 years)
+              </span>
+            </label>
+
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-aside reveal">
+            <a href="tel:+82316927751" class="contact-method">
+              <span class="cm-label">Tel</span>
+              <span class="cm-value">+82-31-692-7751</span>
+              <span class="cm-sub">Weekdays 08:00 – 18:00</span>
+            </a>
+            <a href="mailto:pnp7751@naver.com" class="contact-method">
+              <span class="cm-label">E-mail</span>
+              <span class="cm-value">pnp7751@naver.com</span>
+              <span class="cm-sub">Fax +82-31-692-7752</span>
+            </a>
+            <!-- TODO: replace href with GreenCell KakaoTalk channel chat URL -->
+            <a href="#" class="contact-method contact-method--kakao" id="kakaoLink" target="_blank" rel="noopener">
+              <span class="cm-label">KakaoTalk</span>
+              <span class="cm-value">Chat on KakaoTalk</span>
+              <span class="cm-sub">Channel coming soon</span>
+            </a>
+            <div class="contact-method contact-method--plain">
+              <span class="cm-label">Address</span>
+              <span class="cm-value">GreenCell · Anseong</span>
+              <span class="cm-sub">59 Yongmeori-angil, Gongdo-eup, Anseong-si, Gyeonggi-do, Republic of Korea</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark">GC</span>
+          <span>GreenCell</span>
+        </div>
+        <p class="footer-desc">Automation &amp; ICT-driven smart container farm</p>
+      </div>
+      <div class="footer-info">
+        <!-- TODO: replace with GreenCell's registered company name / CEO / business number -->
+        <p>GreenCell<span class="sep">|</span>Smart farm &amp; container farm business</p>
+        <p>59 Yongmeori-angil, Gongdo-eup, Anseong-si, Gyeonggi-do, Republic of Korea</p>
+        <p>
+          TEL +82-31-692-7751<span class="sep">|</span>FAX +82-31-692-7752<span class="sep">|</span>E-mail pnp7751@naver.com
+        </p>
+        <p>Hours Weekdays 08:00 – 18:00</p>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> GreenCell. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
