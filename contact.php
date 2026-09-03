@@ -20,13 +20,35 @@ function respond(bool $ok, string $message, int $code = 200): void
     exit;
 }
 
+/* 언어 (폼의 hidden lang=en 이면 영문 응답) */
+$lang = (($_POST['lang'] ?? '') === 'en') ? 'en' : 'ko';
+$T = $lang === 'en' ? [
+    'bad_request' => 'Invalid request.',
+    'received'    => 'Your inquiry has been received.',
+    'name'        => 'Please enter your name.',
+    'phone'       => 'Please enter your phone number.',
+    'email'       => 'Please enter a valid e-mail address.',
+    'message'     => 'Please enter at least 5 characters in your message.',
+    'agree'       => 'Please agree to the collection and use of personal information.',
+    'success'     => 'Your inquiry has been received. We will contact you shortly.',
+] : [
+    'bad_request' => '잘못된 요청입니다.',
+    'received'    => '문의가 접수되었습니다.',
+    'name'        => '이름을 입력해 주세요.',
+    'phone'       => '연락처를 입력해 주세요.',
+    'email'       => '올바른 이메일을 입력해 주세요.',
+    'message'     => '문의 내용을 5자 이상 입력해 주세요.',
+    'agree'       => '개인정보 수집·이용에 동의해 주세요.',
+    'success'     => '문의가 접수되었습니다. 빠르게 연락드리겠습니다.',
+];
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    respond(false, '잘못된 요청입니다.', 405);
+    respond(false, $T['bad_request'], 405);
 }
 
 /* 스팸 봇 차단: 숨김 필드가 채워져 있으면 조용히 성공 처리 */
 if (!empty($_POST['website'])) {
-    respond(true, '문의가 접수되었습니다.');
+    respond(true, $T['received']);
 }
 
 /* ── 입력값 ── */
@@ -41,11 +63,11 @@ $agree   = in_array($_POST['agree'] ?? '', ['on', '1', 'true'], true);
 
 /* ── 검증 ── */
 $errors = [];
-if ($name === '')                               $errors[] = '이름을 입력해 주세요.';
-if ($phone === '')                              $errors[] = '연락처를 입력해 주세요.';
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = '올바른 이메일을 입력해 주세요.';
-if (mb_strlen($message) < 5)                    $errors[] = '문의 내용을 5자 이상 입력해 주세요.';
-if (!$agree)                                    $errors[] = '개인정보 수집·이용에 동의해 주세요.';
+if ($name === '')                               $errors[] = $T['name'];
+if ($phone === '')                              $errors[] = $T['phone'];
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = $T['email'];
+if (mb_strlen($message) < 5)                    $errors[] = $T['message'];
+if (!$agree)                                    $errors[] = $T['agree'];
 
 if ($errors) {
     respond(false, implode("\n", $errors), 422);
@@ -143,4 +165,4 @@ if (!empty($mail['enabled'])) {
     }
 }
 
-respond(true, '문의가 접수되었습니다. 빠르게 연락드리겠습니다.');
+respond(true, $T['success']);
