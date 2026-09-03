@@ -966,6 +966,96 @@ ul {
   color: var(--color-text-inverse-muted);
 }
 
+/* 협력·거래처 */
+.partners {
+  background: var(--color-bg);
+}
+
+.partners-group {
+  margin-top: 52px;
+}
+
+.partners-group:first-of-type {
+  margin-top: 0;
+}
+
+.partners-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.partners-group-title span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.partners-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.partners-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 62px;
+  padding: 14px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.partners-list li:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.partners-global-lead {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.partners-countries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.partners-countries li {
+  padding: 9px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
 /* 찾아오시는 길 */
 .location {
   background: var(--color-bg);
@@ -1071,7 +1161,9 @@ ul {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 28px 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
@@ -1079,6 +1171,29 @@ ul {
   border-color: var(--color-gold);
   transform: translateY(-3px);
   box-shadow: 0 16px 32px rgba(13, 20, 32, 0.06);
+}
+
+.prod-item-media {
+  aspect-ratio: 4 / 3;
+  background: var(--color-text-inverse);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.prod-item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+  transition: transform 0.5s ease;
+}
+
+.prod-item:hover .prod-item-media img {
+  transform: scale(1.03);
+}
+
+.prod-item-body {
+  padding: 24px 24px 26px;
 }
 
 .prod-item h3 {
@@ -1106,6 +1221,42 @@ ul {
   color: var(--color-text-muted);
 }
 
+/* 단일 품목 카테고리 — 가로형 카드 */
+.prod-items--single {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+}
+
+.prod-items--single .prod-item {
+  flex-direction: row;
+}
+
+.prod-items--single .prod-item-media {
+  flex: 0 0 42%;
+  aspect-ratio: auto;
+  border-bottom: none;
+  border-right: 1px solid var(--color-border);
+}
+
+.prod-items--single .prod-item-body {
+  align-self: center;
+}
+
+.prod-item-more {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-gold);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.prod-item-more:hover {
+  border-bottom-color: var(--color-gold);
+}
+
 /* 대표 제품 강조 (에스컬레이터 체인) */
 .prod-cat--featured {
   border-bottom: none;
@@ -1124,6 +1275,10 @@ ul {
 .prod-cat--featured .prod-item {
   background: rgba(244, 242, 238, 0.03);
   border-color: rgba(244, 242, 238, 0.14);
+}
+
+.prod-cat--featured .prod-item-media {
+  border-bottom-color: rgba(244, 242, 238, 0.14);
 }
 
 .prod-cat--featured .prod-item:hover {
@@ -1457,6 +1612,10 @@ a.contact-method:hover {
   scroll-margin-top: 140px;
 }
 
+.has-topbar .subnav {
+  top: 124px;
+}
+
 .has-topbar .hero-inner {
   padding-top: 124px;
 }
@@ -1544,6 +1703,26 @@ body.brand-greencell .vision-item:hover {
 @media (max-width: 760px) {
   .br-desktop {
     display: none;
+  }
+
+  .partners-group {
+    margin-top: 40px;
+  }
+
+  .partners-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .partners-list li {
+    min-height: 56px;
+    padding: 12px;
+    font-size: 0.82rem;
+  }
+
+  .partners-countries li {
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 
   .hero-eyebrow,
@@ -1665,6 +1844,17 @@ body.brand-greencell .vision-item:hover {
 
   .prod-items {
     grid-template-columns: 1fr;
+  }
+
+  .prod-items--single .prod-item {
+    flex-direction: column;
+  }
+
+  .prod-items--single .prod-item-media {
+    flex: none;
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--color-border);
+    border-right: none;
   }
 
   .contact-form {

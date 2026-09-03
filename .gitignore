@@ -7,3 +7,8 @@
 # OS / 편집기
 Thumbs.db
 .DS_Store
+
+# 편집용 원본 / 미사용 대용량 파일
+/assets/
+/images/cin.jpg
+/images/cinb.png

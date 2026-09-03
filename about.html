@@ -10,7 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="has-topbar brand-pnp">
+  <!-- 계열사 · 언어 전환 -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-tabs" aria-label="계열사 선택">
+        <a href="index.html" class="brand-tab is-active" aria-current="page">피앤피코리아</a>
+        <a href="greencell.html" class="brand-tab">그린셀</a>
+      </div>
+      <div class="lang-switch" aria-label="언어 선택">
+        <a href="about.html" class="is-active" aria-current="page">KO</a>
+        <span aria-hidden="true">·</span>
+        <a href="index.en.html">EN</a>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header is-scrolled" id="siteHeader">
     <div class="container header-inner">
       <a href="index.html#home" class="logo">
@@ -20,7 +35,6 @@
       <nav class="nav" id="primaryNav">
         <a href="about.html" class="is-active">회사소개</a>
         <a href="products.html">제품</a>
-        <a href="index.html#values">핵심가치</a>
         <a href="contact.html">문의하기</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
@@ -48,6 +62,7 @@
       <div class="container subnav-inner">
         <a href="#greeting">대표 인사말</a>
         <a href="#vision">비전</a>
+        <a href="#partners">협력·거래처</a>
         <a href="#location">찾아오시는 길</a>
       </div>
     </nav>
@@ -121,6 +136,64 @@
             <h3>고객 성장</h3>
             <p>고객의 성장이 곧 회사의 성장이라는 믿음으로 함께합니다.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         협력·거래처
+    ============================================ -->
+    <section class="section partners" id="partners">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">PARTNERS &amp; CLIENTS</span>
+          <h2 class="section-title">협력·거래처</h2>
+          <p class="section-sub">
+            국내외 완성차·모빌리티 기업과 철도·교통 공공기관에
+            동력전달부품과 산업설비를 공급해 왔습니다.
+          </p>
+        </div>
+
+        <div class="partners-group reveal">
+          <h3 class="partners-group-title">기업 <span>Enterprise</span></h3>
+          <ul class="partners-list">
+            <li>현대·기아자동차</li>
+            <li>POSCO</li>
+            <li>대동모빌리티</li>
+            <li>BKS</li>
+            <li>좋은엘리베이터</li>
+            <li>지톤그룹</li>
+          </ul>
+        </div>
+
+        <div class="partners-group reveal">
+          <h3 class="partners-group-title">철도·교통 공공기관 <span>Rail &amp; Transit</span></h3>
+          <ul class="partners-list">
+            <li>서울교통공사</li>
+            <li>부산교통공사</li>
+            <li>한국철도공사</li>
+            <li>광주도시철도공사</li>
+            <li>대구도시철도공사</li>
+            <li>대전도시철도공사</li>
+          </ul>
+        </div>
+
+        <div class="partners-group partners-group--global reveal">
+          <h3 class="partners-group-title">글로벌 공급 <span>Global</span></h3>
+          <p class="partners-global-lead">
+            현대·기아자동차 해외공장 전역을 비롯한 글로벌 각지에 부품을 공급하고 있습니다.
+          </p>
+          <ul class="partners-countries">
+            <li>미국</li>
+            <li>멕시코</li>
+            <li>브라질</li>
+            <li>체코</li>
+            <li>슬로바키아</li>
+            <li>인도</li>
+            <li>러시아</li>
+            <li>인도네시아</li>
+            <li>태국</li>
+          </ul>
         </div>
       </div>
     </section>

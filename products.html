@@ -10,7 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="has-topbar brand-pnp">
+  <!-- 계열사 · 언어 전환 -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-tabs" aria-label="계열사 선택">
+        <a href="index.html" class="brand-tab is-active" aria-current="page">피앤피코리아</a>
+        <a href="greencell.html" class="brand-tab">그린셀</a>
+      </div>
+      <div class="lang-switch" aria-label="언어 선택">
+        <a href="products.html" class="is-active" aria-current="page">KO</a>
+        <span aria-hidden="true">·</span>
+        <a href="index.en.html">EN</a>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header is-scrolled" id="siteHeader">
     <div class="container header-inner">
       <a href="index.html#home" class="logo">
@@ -20,7 +35,6 @@
       <nav class="nav" id="primaryNav">
         <a href="about.html">회사소개</a>
         <a href="products.html" class="is-active">제품</a>
-        <a href="index.html#values">핵심가치</a>
         <a href="contact.html">문의하기</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
@@ -66,41 +80,70 @@
           <span class="section-tag">FLAGSHIP PRODUCT</span>
           <h2 class="section-title">에스컬레이터 체인</h2>
           <p class="prod-cat-desc">
-            에스컬레이터·무빙워크의 안정적인 구동과 직결되는 핵심 부품입니다.
-            현대·오티스·동양 등 주요 승강기 제조사 규격에 맞춰 스텝체인과
-            관련 부품을 공급합니다.
+            에스컬레이터·무빙워크 구동에 직결되는 핵심 부품입니다. 현대·오티스·티센(동양)·
+            쉰들러 등 주요 제조사 규격에 맞춰 스텝체인과 스텝롤러·핸드레일 부품을 공급합니다.
           </p>
         </div>
         <div class="prod-items reveal">
           <article class="prod-item">
-            <h3>현대 TYPE</h3>
-            <span class="en">Hyundai Type</span>
-            <p>현대엘리베이터 규격 에스컬레이터 스텝체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-hyundai.jpg" alt="현대 TYPE 에스컬레이터 스텝체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>현대 TYPE</h3>
+              <span class="en">Hyundai Type</span>
+              <p>현대엘리베이터 규격 에스컬레이터 스텝체인. 체인 피치·스텝 거리별로 대응합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>오티스 TYPE</h3>
-            <span class="en">OTIS Type</span>
-            <p>오티스(OTIS) 규격 에스컬레이터 스텝체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-otis.jpg" alt="오티스 TYPE 에스컬레이터 스텝체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>오티스 TYPE</h3>
+              <span class="en">OTIS Type</span>
+              <p>오티스(OTIS) 규격 에스컬레이터 스텝체인.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>동양 TYPE</h3>
-            <span class="en">Dongyang Type</span>
-            <p>동양에스컬레이터 규격 스텝체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-dongyang.jpg" alt="티센(동양) TYPE 에스컬레이터 스텝체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>티센(동양) TYPE</h3>
+              <span class="en">Thyssen / Dongyang Type</span>
+              <p>티센크루프·동양 규격 스텝체인.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>기타 업체 TYPE</h3>
-            <span class="en">Other Makers</span>
-            <p>미쓰비시·티센 등 기타 제조사 규격에 대응합니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-other.png" alt="기타 제조사 에스컬레이터 체인 규격도" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>기타 제조사 TYPE</h3>
+              <span class="en">Other Makers</span>
+              <p>쉰들러(Schindler) 등 기타 제조사 규격 스텝체인에 대응합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>무빙워크 체인</h3>
-            <span class="en">Moving Walk</span>
-            <p>무빙워크(수평 보행기) 전용 구동 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-movingwalk.png" alt="무빙워크 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>무빙워크 체인</h3>
+              <span class="en">Moving Walk</span>
+              <p>무빙워크 전용 구동 체인. 현대·오티스 등 1200·1400·1600 TYPE에 대응합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>에스컬레이터 부품</h3>
-            <span class="en">Escalator Parts</span>
-            <p>스텝롤러, 핸드레일 시브·드라이브 롤러, 구동 스프라켓 등.</p>
+            <div class="prod-item-media">
+              <img src="images/products/esc-parts.png" alt="에스컬레이터 스텝롤러" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>에스컬레이터 부품</h3>
+              <span class="en">Escalator Parts</span>
+              <p>스텝롤러, 핸드레일 드라이브·텐션 롤러, 구동 스프라켓 등.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -115,55 +158,100 @@
           <span class="section-tag">POWER TRANSMISSION</span>
           <h2 class="section-title">롤러 체인</h2>
           <p class="prod-cat-desc">
-            동력전달의 기본이 되는 표준 롤러 체인부터 환경·하중 조건에 맞춘
-            특수 사양까지 폭넓게 공급합니다.
+            동력전달의 기본이 되는 표준 롤러 체인부터 환경·하중 조건에 맞춘 특수 사양까지
+            폭넓게 공급합니다. RS(HC·DBC) 규격 전 형번에 대응합니다.
           </p>
         </div>
         <div class="prod-items reveal">
           <article class="prod-item">
-            <h3>표준 롤러 체인</h3>
-            <span class="en">Standard Roller Chain</span>
-            <p>KS·ANSI 규격 표준 동력전달용 롤러 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-standard.jpg" alt="표준 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>표준 롤러 체인</h3>
+              <span class="en">Standard Roller Chain</span>
+              <p>동력전달용으로 가장 널리 쓰이는 표준 체인. 홑줄·다열 사양으로 공급합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>저급유 롤러 체인</h3>
-            <span class="en">Low-Lube Chain</span>
-            <p>함유 윤활 소재를 적용해 급유 주기를 늘린 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-lowlube.jpg" alt="저급유 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>저급유 롤러 체인</h3>
+              <span class="en">Low-Lube Chain</span>
+              <p>오일 함유 부시로 표준 대비 마모수명을 약 10배 늘린 체인. 급유가 어려운 환경에 적합합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>사이드 롤러 체인</h3>
-            <span class="en">Side Roller Chain</span>
-            <p>측면 롤러로 레일 위 주행에 대응하는 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-side.jpg" alt="사이드 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>사이드 롤러 체인</h3>
+              <span class="en">Side Roller Chain</span>
+              <p>측면 롤러 위에 반송물을 얹어 옮기는 프리플로우 체인. Z형·K형이 있습니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>톱 롤러 체인</h3>
-            <span class="en">Top Roller Chain</span>
-            <p>상부 대형 롤러가 이송물을 직접 받쳐 옮깁니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-top.jpg" alt="톱 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>톱 롤러 체인</h3>
+              <span class="en">Top Roller Chain</span>
+              <p>상부 회전 롤러 위에 이송물을 적재해, 체인 이동 방향·속도와 무관하게 반송·정지가 가능합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>호로핀 체인</h3>
-            <span class="en">Hollow Pin Chain</span>
-            <p>중공 핀 구조로 어태치먼트 장착이 자유롭습니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-hollowpin.jpg" alt="호로핀 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>호로핀 체인</h3>
+              <span class="en">Hollow Pin Chain</span>
+              <p>중공 핀 구조로 체인이 장착된 상태에서 어태치먼트를 탈착할 수 있습니다. 표준품 스프라켓 사용.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>스테인레스 체인</h3>
-            <span class="en">Stainless Chain</span>
-            <p>내식성이 필요한 식품·화학 환경용 STS 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-stainless.png" alt="스테인레스 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>스테인레스 체인</h3>
+              <span class="en">Stainless Chain</span>
+              <p>식품·제약·화학 등 강한 내식성이 필요한 환경용. −20℃~300℃ 범위에서 사용 가능합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>평판형 체인</h3>
-            <span class="en">Flat Top Chain</span>
-            <p>평판 어태치먼트로 판상 이송물 운반에 적합.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-flat.jpg" alt="평판형 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>평판형 체인</h3>
+              <span class="en">Flat Top Chain</span>
+              <p>링크플레이트를 평판형으로 제작해 표준 롤러 체인 대비 피로강도가 우수합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>중하중용 체인</h3>
-            <span class="en">Heavy Duty Chain</span>
-            <p>강화 핀·부시로 높은 장력에 견디는 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-heavy.png" alt="중하중용 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>중하중용 체인</h3>
+              <span class="en">Heavy Duty Chain</span>
+              <p>형번에 H가 붙는 체인. 링크플레이트 두께를 키워 파단강도·내마모성을 향상시켰습니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>슈퍼 체인</h3>
-            <span class="en">Super Chain</span>
-            <p>표준 대비 인장강도를 높인 고강도 시리즈.</p>
+            <div class="prod-item-media">
+              <img src="images/products/roller-super.jpg" alt="슈퍼 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>슈퍼 체인</h3>
+              <span class="en">Super Chain</span>
+              <p>특수 소재·공정으로 인장강도와 피로강도를 높인 고강도 체인. 리프트 등 위험설비에 사용됩니다.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -178,30 +266,50 @@
           <span class="section-tag">POWER TRANSMISSION</span>
           <h2 class="section-title">더블피치 체인</h2>
           <p class="prod-cat-desc">
-            일반 롤러 체인 대비 2배 피치 구조로, 장거리 이송과 저속 구동에
+            링크플레이트 피치가 표준 체인의 2배인 체인으로, 긴 축간거리의 컨베이어 라인에
             적합한 경제적인 제품입니다.
           </p>
         </div>
         <div class="prod-items reveal">
           <article class="prod-item">
-            <h3>더블피치 롤러 체인</h3>
-            <span class="en">Double Pitch Roller Chain</span>
-            <p>2배 피치로 장거리 저속 이송에 경제적입니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/dp-roller.jpg" alt="더블피치 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>더블피치 롤러 체인</h3>
+              <span class="en">Double Pitch Roller Chain</span>
+              <p>S형·R형 롤러가 있으며, 여러 종류의 어태치먼트를 부착해 장거리 컨베이어에 사용합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>더블피치 톱 롤러 체인</h3>
-            <span class="en">Double Pitch Top Roller</span>
-            <p>대형 톱롤러를 적용한 이송 전용 더블피치 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/dp-top.jpg" alt="더블피치 톱 롤러 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>더블피치 톱 롤러 체인</h3>
+              <span class="en">Double Pitch Top Roller</span>
+              <p>대형 톱롤러로 이송물을 직접 받쳐 옮기는 이송 전용 더블피치 체인.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>배속(VR) 체인</h3>
-            <span class="en">Variable / Constant Ratio</span>
-            <p>롤러 회전으로 이송 속도를 배가하는 배속·무배속 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/dp-vr.jpg" alt="배속(VR) 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>배속(VR) 체인</h3>
+              <span class="en">Speed-Doubling Chain</span>
+              <p>롤러 외경비에 따라 반송물을 체인 속도의 약 2.5배로 이송합니다. PLASTIC(저소음)·STEEL(고중량) 선택.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>센터커버 체인</h3>
-            <span class="en">Center Cover Chain</span>
-            <p>연결부 커버로 볼트·너트 등 이물질 유입을 방지합니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/dp-cover.png" alt="센터커버 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>센터커버 체인</h3>
+              <span class="en">Center Cover Chain</span>
+              <p>연결부 커버로 볼트·너트 등 이물질 유입을 막습니다. 무게중심이 낮아 안정적으로 이송하며 롤러 재질(Steel/Plastic)을 선택할 수 있습니다.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -216,16 +324,21 @@
           <span class="section-tag">POWER TRANSMISSION</span>
           <h2 class="section-title">리프 체인</h2>
           <p class="prod-cat-desc">
-            지게차 마스트, 리프팅 장비 등 고하중 직선 운동에 사용되며
-            안전율 높은 인장 강도를 제공합니다.
+            지게차 마스트, 중장비 등 고하중 직선 운동에 사용됩니다. 사용 길이에 맞춰
+            주문 제작합니다.
           </p>
         </div>
-        <div class="prod-items reveal">
+        <div class="prod-items prod-items--single reveal">
           <article class="prod-item">
-            <h3>리프 체인</h3>
-            <span class="en">Leaf Chain (AL / BL / LH)</span>
-            <p>지게차 마스트·리프팅 장비용 고하중 직선 운동 체인. 링크 조합으로
-              다양한 하중 사양에 대응합니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/leaf.jpg" alt="리프 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>리프 체인</h3>
+              <span class="en">Leaf Chain (AL / BL)</span>
+              <p>경하중용 AL형과 중하중용 BL형으로 구분됩니다. 플레이트와 핀을 조합해 지게차·중장비의
+                상하·수평 이송 전달용으로 사용하며, 길이에 맞춰 주문 제작합니다.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -240,25 +353,40 @@
           <span class="section-tag">POWER TRANSMISSION</span>
           <h2 class="section-title">컨베어 체인</h2>
           <p class="prod-cat-desc">
-            물류·제조 라인의 이송 설비에 사용되며, 다양한 어태치먼트 사양으로
-            이송 대상에 대응합니다.
+            물류·제조 라인의 이송 설비에 사용되며, 이송 대상에 맞춰 어태치먼트 사양을
+            구성합니다.
           </p>
         </div>
         <div class="prod-items reveal">
           <article class="prod-item">
-            <h3>표준 컨베어 체인</h3>
-            <span class="en">Standard Conveyor Chain</span>
-            <p>각종 어태치먼트로 물류·제조 라인 이송에 대응합니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/conv-standard.png" alt="표준형 컨베어 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>표준형 컨베어 체인</h3>
+              <span class="en">Standard Conveyor Chain</span>
+              <p>일반형·준강력형·강력형으로 강도를 분류하며, 롤러 종류에 따라 S/M/R/F형이 있습니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>플로우 컨베어 체인</h3>
-            <span class="en">Flow Conveyor Chain</span>
-            <p>분체·입상물을 밀폐 이송하는 플로우 컨베이어용 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/conv-flow.png" alt="플로우 컨베어 체인" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>플로우 컨베어 체인</h3>
+              <span class="en">Flow Conveyor Chain</span>
+              <p>분립체를 밀폐 케이스 내로 이송해 비산이 없는 공해방지형. 수송물에 따라 어태치먼트를 선택합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>자동차 조립라인용 체인</h3>
-            <span class="en">Automotive Assembly Line</span>
-            <p>자동차 조립·도장 라인 반송용 특수 체인.</p>
+            <div class="prod-item-media">
+              <img src="images/products/conv-auto.png" alt="자동차 조립라인용 체인 규격도" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>자동차 조립라인용 체인</h3>
+              <span class="en">Automotive Assembly Line</span>
+              <p>자동차 조립·도장 라인 반송용 특수 체인. VB형·FB형으로 공급합니다.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -273,16 +401,21 @@
           <span class="section-tag">LUBRICATION</span>
           <h2 class="section-title">윤활유</h2>
           <p class="prod-cat-desc">
-            체인 수명과 설비 가동률을 좌우하는 전용 윤활 솔루션. 현장 조건에
-            맞춰 제품을 제안합니다.
+            체인 수명과 설비 가동률을 좌우하는 전용 윤활 솔루션. 현장 조건에 맞춰
+            제품을 제안합니다.
           </p>
         </div>
-        <div class="prod-items reveal">
+        <div class="prod-items prod-items--single reveal">
           <article class="prod-item">
-            <h3>인터플론</h3>
-            <span class="en">INTERFLON</span>
-            <p>MicPol® 기술 기반 건식 피막 윤활제. 먼지 부착을 줄이고
-              윤활 주기를 늘립니다.</p>
+            <div class="prod-item-media">
+              <img src="images/products/interflon.jpg" alt="인터플론 INTERFLON" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>인터플론</h3>
+              <span class="en">INTERFLON</span>
+              <p>1980년 네덜란드에서 설립된 인터플론의 건식 피막 윤활제. 고유의 MicPol® 기술로 먼지
+                부착을 줄이고 윤활 주기를 늘립니다. 현재 약 45개국에 공급되고 있습니다.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -302,19 +435,36 @@
         </div>
         <div class="prod-items reveal">
           <article class="prod-item">
-            <h3>엔지니어링 플라스틱</h3>
-            <span class="en">Engineering Plastic</span>
-            <p>무급유·저소음 플라스틱 체인 및 부품.</p>
+            <div class="prod-item-media">
+              <img src="images/products/eng-plastic.png" alt="엔지니어링 플라스틱 부품" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>엔지니어링 플라스틱</h3>
+              <span class="en">Engineering Plastic</span>
+              <p>금속·세라믹을 대체하는 고성능 플라스틱. 강도와 탄성이 우수하고 고온에 견디는
+                무급유 체인·부품(TP-LUBE 등)을 공급합니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>자동 급유장치</h3>
-            <span class="en">Auto Lubricator</span>
-            <p>펄사루브 등 체인·베어링 자동 급유 시스템.</p>
+            <div class="prod-item-media">
+              <img src="images/products/auto-lube.png" alt="펄사루브 자동 급유장치" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>자동 급유장치</h3>
+              <span class="en">Auto Lubricator</span>
+              <p>펄사루브(Pulsarlube) 등 자동 그리스 주유기. 체인·베어링에 정량 급유해 조기 마모와
+                고장, 동력 손실을 줄입니다.</p>
+            </div>
           </article>
           <article class="prod-item">
-            <h3>유공압</h3>
-            <span class="en">Hydraulic &amp; Pneumatic</span>
-            <p>실린더·밸브 등 유공압 기기.</p>
+            <div class="prod-item-media">
+              <img src="images/products/hydraulic.png" alt="유공압 구동 기기" loading="lazy" />
+            </div>
+            <div class="prod-item-body">
+              <h3>유공압 기기</h3>
+              <span class="en">Hydraulic &amp; Pneumatic</span>
+              <p>실린더·밸브 등 유공압 구동 기기 및 조립 설비.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -329,10 +479,22 @@
           <span class="section-tag">NEW BUSINESS</span>
           <h2 class="section-title">컨테이너팜 그린셀</h2>
           <p class="prod-cat-desc">
-            동력전달 제품 판매와 자동화·환경설비 시공으로 축적한 기술을
-            발판으로, 컨테이너를 활용한 스마트팜 사업을 추진하고 있습니다.
-            제어 환경에서 계절과 기후에 관계없이 안정적으로 작물을 재배합니다.
+            동력전달 제품 판매와 자동화·환경설비 시공으로 축적한 기술을 발판으로,
+            자동화 설비와 ICT 복합환경제어 기술을 적용한 버섯재배용 컨테이너팜
+            <strong>그린셀</strong>을 별도 법인으로 운영하고 있습니다. 계절과 기후에
+            관계없이 백화고 등 프리미엄 버섯을 안정적으로 생산합니다.
           </p>
+        </div>
+        <div class="prod-items reveal">
+          <article class="prod-item prod-item--link">
+            <div class="prod-item-body">
+              <h3>그린셀 홈페이지</h3>
+              <span class="en">GreenCell</span>
+              <p>컨테이너팜 도입, 백화고 재배, 기술이전·창업지원 안내는 그린셀 사이트에서
+                확인하실 수 있습니다.</p>
+              <a href="greencell.html" class="prod-item-more">그린셀 바로가기 &rarr;</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
