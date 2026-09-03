@@ -971,6 +971,25 @@ ul {
   background: var(--color-bg);
 }
 
+/* 인증·지식재산 (같은 구성, 배경만 구분) */
+.partners.certs {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.partners.certs .partners-list li {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-note {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-text-muted);
+}
+
 .partners-group {
   margin-top: 52px;
 }
@@ -1219,6 +1238,15 @@ ul {
   font-weight: 300;
   line-height: 1.6;
   color: var(--color-text-muted);
+}
+
+/* 텍스트 카드 2열 (설비·엔지니어링 등) */
+.prod-items--pair {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.prod-items--pair .prod-item-body {
+  padding: 30px 28px 32px;
 }
 
 /* 단일 품목 카테고리 — 가로형 카드 */
@@ -1642,6 +1670,87 @@ body.brand-greencell .vision-item:hover {
   border-color: rgba(47, 158, 84, 0.5);
 }
 
+/* ---------- 이미지 + 설명 2단 (split) ---------- */
+.split-section {
+  background: var(--color-bg);
+}
+
+.split-section--dark {
+  background: var(--color-black);
+  color: var(--color-text-inverse);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.split + .split {
+  margin-top: 72px;
+}
+
+.split-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.split-section--dark .split-media img {
+  border-color: rgba(244, 242, 238, 0.14);
+}
+
+.split--flip .split-media {
+  order: 2;
+}
+
+.split-subtitle {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.split-section--dark .split-subtitle {
+  color: var(--color-text-inverse);
+}
+
+.split-body p {
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.split-section--dark .split-body p {
+  color: var(--color-text-inverse-muted);
+}
+
+.split-spec {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.split-spec li {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.split-spec li span {
+  flex: 0 0 88px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
 /* ============================================
    Responsive
    ============================================ */
@@ -1824,9 +1933,9 @@ body.brand-greencell .vision-item:hover {
     min-height: 300px;
   }
 
+  /* 모바일에서는 대표 사진 숨김 */
   .greeting-portrait {
-    max-width: 280px;
-    margin: 20px auto 4px;
+    display: none;
   }
 
   .product-card--featured {
@@ -1844,6 +1953,23 @@ body.brand-greencell .vision-item:hover {
 
   .prod-items {
     grid-template-columns: 1fr;
+  }
+
+  .prod-items--pair {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .split + .split {
+    margin-top: 48px;
+  }
+
+  .split--flip .split-media {
+    order: 0;
   }
 
   .prod-items--single .prod-item {
