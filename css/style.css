@@ -3,6 +3,22 @@
    고급스러운 다크 톤 + 미니멀 레이아웃
    ============================================ */
 
+/* 본문 폰트: Pretendard Variable — 자체 호스팅 (SIL Open Font License 1.1, fonts/Pretendard-OFL.txt).
+   외부 웹폰트(Google Fonts Noto Sans KR)가 로딩·재시도마다 대체폰트↔웹폰트를 오가며
+   글자 두께·너비가 흔들리던 문제 때문에 로컬 1파일로 전환. 시스템 대체폰트와 자간·높이가
+   비슷해 교체 시 밀림이 거의 없고, 첫 로드 후엔 캐시되어 항상 동일하게 렌더된다. */
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  /* optional: 렌더 시점에 폰트가 준비돼 있지 않으면 이번 로드는 대체폰트로만 그리고
+     교체(swap)하지 않는다 → 페이지 이동 때 글자가 다시 배치되며 움직이는 현상 제거.
+     자체 호스팅이라 첫 방문 후 캐시되면 항상 Pretendard 로 즉시 렌더된다. */
+  font-display: optional;
+  src: local("Pretendard Variable"),
+    url("../fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
 :root {
   --color-black: #0a0c10;
   --color-navy: #0d1420;
@@ -30,6 +46,10 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  /* 스크롤바 자리를 항상 확보 → 페이지마다 세로 스크롤바 유무가 달라도
+     가운데 정렬된 레이아웃(메뉴 포함)이 좌우로 밀리지 않는다. */
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 
 body {
@@ -42,7 +62,8 @@ section[id] {
 
 body {
   margin: 0;
-  font-family: "Noto Sans KR", "Malgun Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", system-ui, sans-serif;
   font-weight: 300;
   color: var(--color-text);
   background: var(--color-bg);
@@ -735,10 +756,7 @@ ul {
    Sub pages (about.html 등)
    ============================================ */
 
-.nav a.is-active {
-  color: var(--color-gold);
-}
-
+/* 현재 페이지 메뉴: 글자 색은 그대로 두고 밑줄(바)만 표시 */
 .nav a.is-active::after {
   width: 100%;
 }
@@ -820,6 +838,49 @@ ul {
 /* 대표 인사말 */
 .greeting {
   background: var(--color-surface);
+}
+
+/* 대표 인사말 끝 — 서명 오른쪽 아래로 사옥 사진 미니 갤러리 (pnpbg1~3).
+   작은 썸네일 3칸, 마우스 오버 시 크게 확대되어 위로 떠오른다. */
+.greeting-gallery {
+  margin: 30px 0 0 auto;
+  width: min(60%, 340px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gg-item {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  cursor: zoom-in;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.gg-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gg-item:hover {
+  transform: scale(2.6);
+  z-index: 6;
+  position: relative;
+  overflow: visible;
+  border-color: var(--color-gold);
+  box-shadow: 0 16px 44px rgba(13, 20, 32, 0.3);
+}
+
+.gg-item:nth-child(3n + 1):hover {
+  transform-origin: left center;
+}
+
+.gg-item:nth-child(3n):hover {
+  transform-origin: right center;
 }
 
 .about-layout {
@@ -1932,6 +1993,15 @@ body.brand-greencell .vision-item:hover {
     display: none;
   }
 
+  .greeting-gallery {
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .gg-item:hover {
+    transform: scale(1.9);
+  }
+
   .product-card--featured {
     grid-template-columns: 1fr;
     padding: 36px 28px;
@@ -2416,5 +2486,771 @@ a.prod-item {
   .ref-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+/* ============================================
+   메인 히어로 — 우측 무한 스크롤 카드 (index.html)
+   ============================================ */
+.hero-inner--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 430px);
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-inner--split .hero-title {
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+}
+
+.hero-inner--split .hero-desc {
+  margin-bottom: 40px;
+}
+
+.hero-marquee {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 15%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 15%, #000 85%, transparent 100%);
+}
+
+.hero-marquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: heroMarquee 50s linear infinite;
+  will-change: transform;
+}
+
+.hero-marquee:hover .hero-marquee-track,
+.hero-marquee:focus-within .hero-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes heroMarquee {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.hm-card {
+  margin-bottom: 14px;
+  padding: 22px 24px 20px;
+  border-radius: 14px;
+  background: rgba(244, 242, 238, 0.04);
+  border: 1px solid rgba(244, 242, 238, 0.09);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: var(--color-text-inverse);
+}
+
+.hm-card:nth-child(even) {
+  border-left: 2px solid rgba(201, 161, 90, 0.55);
+}
+
+.hm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.hm-loc {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(244, 242, 238, 0.5);
+}
+
+.hm-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(244, 242, 238, 0.4);
+  white-space: nowrap;
+}
+
+.hm-tag i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.hm-title {
+  margin: 0 0 9px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--color-text-inverse);
+}
+
+.hm-body {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(244, 242, 238, 0.58);
+}
+
+.hm-by {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: rgba(244, 242, 238, 0.42);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee-track {
+    animation: none;
+  }
+
+  .hero-marquee {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-inner--split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-marquee {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-marquee {
+    display: none;
+  }
+}
+
+/* ============================================
+   그린셀 — 내비게이션 드롭다운 + 확장 콘텐츠
+   ============================================ */
+
+/* 솔루션 > 연구개발 드롭다운 */
+.nav-group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-drop {
+  position: absolute;
+  top: 100%;
+  left: -18px;
+  min-width: 176px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 12, 16, 0.97);
+  border: 1px solid rgba(244, 242, 238, 0.1);
+  border-radius: var(--radius);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.nav-group:hover .nav-drop,
+.nav-group:focus-within .nav-drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-drop a {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.nav-drop a::after {
+  display: none;
+}
+
+.nav-drop a:hover {
+  color: var(--color-gold);
+}
+
+/* 도입 효과 2단 리스트 */
+.gc-effect {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.gc-effect-col {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 34px 32px;
+}
+
+.gc-effect-col h3 {
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.gc-effect-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.gc-effect-col li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.gc-effect-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* 브로슈어 느낌 — 멀티컬러 스트라이프 */
+.gc-stripe {
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 44px;
+  background: linear-gradient(90deg,
+    #1f7a7a 0%, #1f7a7a 20%,
+    #4a9e3e 20%, #4a9e3e 40%,
+    #8a8f3c 40%, #8a8f3c 60%,
+    #c9a15a 60%, #c9a15a 80%,
+    #6b3f7a 80%, #6b3f7a 100%);
+}
+
+/* 솔루션 개요 — 큰글씨 목차 */
+.gc-toc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gc-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 26px;
+  background: var(--color-surface);
+  transition: background var(--transition);
+}
+
+.gc-toc a:hover {
+  background: var(--color-bg);
+}
+
+.gc-toc .n {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+.gc-toc .t {
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.gc-toc a:hover .t {
+  color: var(--color-gold);
+}
+
+/* NPS TYPE / TCM TYPE 비교 카드 */
+.gc-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.gc-type {
+  padding: 36px 34px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.gc-type--nps {
+  border-color: var(--color-gold);
+  box-shadow: inset 0 0 0 1px var(--color-gold);
+}
+
+.gc-type h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.gc-type .sub {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.gc-type p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.gc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.gc-tags li {
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: rgba(47, 158, 84, 0.1);
+  border: 1px solid rgba(47, 158, 84, 0.4);
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* 자동화 프로세스 pill 흐름 */
+.gc-proc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gc-proc li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 210px;
+  padding: 15px 20px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.gc-proc li .s {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.gc-proc li:nth-child(4n + 1) { background: #1f7a7a; }
+.gc-proc li:nth-child(4n + 2) { background: #4a9e3e; }
+.gc-proc li:nth-child(4n + 3) { background: #8a7f3c; }
+.gc-proc li:nth-child(4n + 4) { background: #6b3f7a; }
+
+/* 복합환경 공정 */
+.gc-env {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gc-env li {
+  flex: 1 1 200px;
+  padding: 18px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.gc-env li span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+/* 정의형 리스트 (내부 구조 · 핵심 기술) */
+.gc-deflist {
+  border-top: 1px solid var(--color-border);
+}
+
+.gc-deflist > div {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 22px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gc-deflist dt {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.gc-deflist dd {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* 표 (수익성 · 비교 · 규격) */
+.gc-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.gc-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 0.86rem;
+}
+
+.gc-table th,
+.gc-table td {
+  border: 1px solid var(--color-border);
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.gc-table thead th {
+  background: var(--color-gold);
+  color: #0c1a10;
+  font-weight: 700;
+}
+
+.gc-table tbody th {
+  background: var(--color-bg);
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.gc-table tbody tr:nth-child(even) td {
+  background: rgba(47, 158, 84, 0.05);
+}
+
+.gc-table td {
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.gc-table .is-highlight {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.gc-figures {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.gc-figures li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.gc-figures li strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.gc-figures li b {
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+/* 콜아웃 박스 */
+.gc-note-box {
+  margin-top: 32px;
+  padding: 28px 30px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius);
+}
+
+.gc-note-box strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.gc-note-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.gc-disclaimer {
+  margin: 40px 0 0;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+/* ---------- STORE ---------- */
+.gc-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.gc-brand {
+  padding: 42px 38px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.gc-brand:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+.gc-brand-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+  border: 1px solid rgba(47, 158, 84, 0.5);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.gc-brand h3 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.gc-brand h3 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+}
+
+.gc-brand p {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.gc-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.gc-benefit {
+  padding: 26px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.gc-benefit strong {
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.gc-benefit span {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.gc-nutri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gc-nutri article {
+  padding: 30px 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.gc-nutri h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.gc-nutri h3 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-top: 4px;
+}
+
+.gc-nutri p {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.gc-recipes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gc-recipes li {
+  padding: 10px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+@media (max-width: 1080px) {
+  .gc-effect {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-nutri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gc-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gc-brand-grid,
+  .gc-toc,
+  .gc-type-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  /* 모바일: 드롭다운을 펼친 상태로 표시 */
+  .nav-group {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-drop {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .nav-drop a {
+    padding: 16px 32px 16px 48px;
+    border-top: 1px solid rgba(244, 242, 238, 0.08);
+    font-size: 0.86rem;
+    color: var(--color-text-inverse-muted);
+  }
+
+  .nav.is-open {
+    max-height: 560px;
+  }
+
+  .gc-nutri {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-deflist > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .gc-figures li {
+    flex-direction: column;
+    gap: 4px;
   }
 }

@@ -21,8 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 헤더: 스크롤 시 배경 표시
-  if (header) {
+  // 헤더 배경.
+  // - 전체 화면 히어로(.hero)가 있는 페이지(메인·그린셀): 상단은 투명, 스크롤하면 배경 표시.
+  // - 서브 페이지(.page-hero): HTML의 is-scrolled 를 그대로 두어 항상 배경 유지.
+  //   (JS가 로드 시 is-scrolled 를 껐다 켜면서 배경이 깜빡이던 문제 방지)
+  if (header && document.querySelector(".hero")) {
     const toggleHeaderState = () => {
       header.classList.toggle("is-scrolled", window.scrollY > 40);
     };

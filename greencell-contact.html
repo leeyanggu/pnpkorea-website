@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>도입 문의 | 그린셀</title>
   <meta name="description" content="그린셀 컨테이너팜 도입, 기술이전·창업, 백화고 관련 문의를 남겨주세요. 전화·이메일·카카오톡으로도 상담 가능합니다." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="has-topbar brand-greencell">
@@ -32,10 +30,15 @@
         <img src="images/greencelllogo-light.png" alt="그린셀" class="logo-img" />
       </a>
       <nav class="nav" id="primaryNav">
-        <a href="greencell.html#intro">그린셀 소개</a>
-        <a href="greencell.html#solutions">솔루션</a>
-        <a href="greencell.html#research">연구개발</a>
-        <a href="greencell.html#values">왜 그린셀</a>
+        <a href="greencell.html#about">그린셀 소개</a>
+        <span class="nav-group">
+          <a href="greencell.html#solutions">솔루션</a>
+          <span class="nav-drop">
+            <a href="greencell.html#solutions">솔루션 개요</a>
+            <a href="greencell.html#research">연구개발</a>
+          </span>
+        </span>
+        <a href="https://sell.smartstore.naver.com/home" target="_blank" rel="noopener noreferrer">STORE</a>
         <a href="greencell-contact.html" class="is-active">문의</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">

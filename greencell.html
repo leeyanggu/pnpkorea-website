@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>그린셀 | 스마트 컨테이너팜</title>
-  <meta name="description" content="그린셀은 자동화설비와 ICT 복합환경제어기술을 적용해, 계절과 기후에 관계없이 프리미엄 버섯을 재배하는 스마트 컨테이너팜입니다." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <meta name="description" content="그린셀은 냉동 컨테이너에 배지 자동이송시스템(NPS)과 ICT 복합환경제어를 적용해, 계절과 기후에 관계없이 프리미엄 표고버섯(백화고)을 연중 생산하는 스마트 컨테이너팜입니다." />
+  <link rel="preload" href="fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="has-topbar brand-greencell">
@@ -32,10 +30,15 @@
         <img src="images/greencelllogo-light.png" alt="그린셀" class="logo-img" />
       </a>
       <nav class="nav" id="primaryNav">
-        <a href="#intro">그린셀 소개</a>
-        <a href="#solutions">솔루션</a>
-        <a href="#research">연구개발</a>
-        <a href="#values">왜 그린셀</a>
+        <a href="#about">그린셀 소개</a>
+        <span class="nav-group">
+          <a href="#solutions">솔루션</a>
+          <span class="nav-drop">
+            <a href="#solutions">솔루션 개요</a>
+            <a href="#research">연구개발</a>
+          </span>
+        </span>
+        <a href="https://sell.smartstore.naver.com/home" target="_blank" rel="noopener noreferrer">STORE</a>
         <a href="greencell-contact.html">문의</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primaryNav">
@@ -51,43 +54,44 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-inner">
         <p class="hero-eyebrow">SMART CONTAINER FARM</p>
-        <h1 class="hero-title">계절 없이 자라는<br />프리미엄 버섯,<br /><span>그린셀</span></h1>
+        <h1 class="hero-title">계절 없이 자라는<br />프리미엄 표고버섯,<br /><span>그린셀</span></h1>
         <p class="hero-desc">
-          그린셀은 자동화설비와 ICT 복합환경제어기술을 적용해<br class="br-desktop" />
-          계절과 기후에 관계없이 버섯을 재배하는 컨테이너팜입니다.
+          단열성 높은 냉동 컨테이너에 배지 자동이송시스템(NPS)과 ICT 복합환경제어를 적용해<br class="br-desktop" />
+          기후에 관계없이 고부가가치 표고버섯 &lsquo;백화고&rsquo;를 연중 생산하는 컨테이너팜입니다.
         </p>
         <div class="hero-actions">
-          <a href="#solutions" class="btn btn-primary">그린셀 알아보기</a>
+          <a href="#solutions" class="btn btn-primary">솔루션 살펴보기</a>
           <a href="greencell-contact.html" class="btn btn-ghost">도입 문의</a>
         </div>
       </div>
-      <a href="#intro" class="scroll-cue" aria-label="아래로 스크롤">
+      <a href="#about" class="scroll-cue" aria-label="아래로 스크롤">
         <span></span>
       </a>
     </section>
 
     <!-- INTRO STATEMENT -->
-    <section class="intro reveal" id="intro">
+    <section class="intro reveal" id="about">
       <div class="container intro-inner">
         <span class="section-tag">ABOUT GREENCELL</span>
         <p class="intro-statement">
-          파종부터 수확까지,<br />
-          재배 환경을 <em>데이터로</em> 관리합니다.
+          입상부터 침봉, 솎음, 수확까지<br />
+          거의 모든 공정을 <em>자동화</em>했습니다.
         </p>
         <p class="intro-sub">
           (주)피앤피코리아가 축적한 자동화·환경설비 기술을 바탕으로,
-          좁은 공간에서도 안정적으로 고품질 버섯을 생산하는 컨테이너팜을 공급합니다.
+          노동강도가 가장 높은 버섯 재배 공정에 ICT 기반 자동화설비를 적용한
+          표고(백화고)버섯 재배 컨테이너팜 시스템을 개발했습니다.
         </p>
-        <a href="greencell-contact.html" class="intro-link">도입 상담 문의 <span aria-hidden="true">→</span></a>
+        <a href="greencell-contact.html" class="intro-link">도입 상담 문의 <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
-    <!-- THE UNIT -->
-    <section class="section split-section" id="unit">
+    <!-- 미래형 버섯 스마트팜 -->
+    <section class="section split-section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag">THE UNIT</span>
-          <h2 class="section-title">컨테이너 한 대로 시작합니다</h2>
+          <span class="section-tag">WHY IT MATTERS</span>
+          <h2 class="section-title">버섯 스마트팜의 품질 표준화와 자동화를 위한 미래형 시스템</h2>
         </div>
         <div class="split reveal">
           <div class="split-media">
@@ -95,115 +99,59 @@
           </div>
           <div class="split-body">
             <p>
-              40피트 냉동 컨테이너에 재배 설비와 복합환경제어 시스템을 통합했습니다.
-              별도의 부지나 건축 없이 설치 즉시 운영할 수 있어, 도심이나 유휴부지에서도
-              활용할 수 있습니다.
+              (백)화고버섯은 일반 작물과 달리 환경 영향에 민감하고 재배 난이도와 노동강도가
+              매우 높습니다. 대부분의 버섯 스마트팜은 온·습도 등 환경 조성만 스마트화되어 있을 뿐,
+              침봉·입상·솎아내기·품질관리·병원균(푸른곰팡이) 살균 및 격리·수확 등 거의 모든 과정이
+              여전히 육안 확인과 수작업으로 이루어져 품질 편차와 인건비 증가, 배지 수율 저조라는
+              한계가 이어져 왔습니다.
             </p>
-            <ul class="split-spec">
-              <li><span>규격</span>40ft 냉동 컨테이너</li>
-              <li><span>재배 면적</span>내부 바닥 약 9평</li>
-              <li><span>제어</span>온·습도 · CO₂ · 환기 · 조도 자동제어 / 원격 통합 모니터링</li>
+            <p>
+              그린셀은 이 문제를 풀기 위해 프리미엄급 (백)화고버섯을 대상으로 한
+              &ldquo;ICT 기반 자동화설비가 적용된 표고(백화고)버섯 재배 컨테이너팜 시스템&rdquo;을 개발했습니다.
+              기존 8~10단계의 수작업 공정을 2~3단계로 최소화하고, 배지 자동 이송과 자동 침봉,
+              AI 병원균 감별·격리를 하나의 컨테이너 안에 통합했습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 도입 효과 -->
+    <section class="section products">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">BENEFITS</span>
+          <h2 class="section-title">도입 효과</h2>
+          <p class="section-sub">농가의 비용 절감과 생산 효율을 함께 끌어올립니다.</p>
+        </div>
+        <div class="gc-effect reveal">
+          <div class="gc-effect-col">
+            <h3>농가의 비용 절감 &amp; 개선</h3>
+            <ul>
+              <li>기존 8~10단계 수작업 공정을 2~3단계로 최소화해 인건비를 절감합니다.</li>
+              <li>버섯 생산의 표준화·자동화로 농업 고령화에 대응하고 청년층 유입을 촉진합니다.</li>
+              <li>지속적이고 안정적인 배지 공급 체계를 구축해 자립이 가능합니다.</li>
+              <li>화고버섯 재배의 원천기술을 확보해 교육과 기술 전수가 가능합니다.</li>
+              <li>이동형 스마트팜으로 좁은 공간에서도 운영할 수 있어 병원·호텔·식당 등 도시농업에 활용됩니다.</li>
+              <li>기후 영향이 없어 농업이 어려운 지역과 해외로도 수출할 수 있습니다.</li>
+            </ul>
+          </div>
+          <div class="gc-effect-col">
+            <h3>생산 효율성 증대</h3>
+            <ul>
+              <li>ICT 복합환경 제어로 기후 영향 없이 연중 백화고를 80% 이상 생산합니다.</li>
+              <li>재배사 내부 환경을 최적화해 생산 수율을 평준화하고 건강한 배지를 유지합니다.</li>
+              <li>최적 생육 환경 유지로 생산 기간을 단축합니다.</li>
+              <li>자동 이송 시스템으로 입상·퇴상·침봉·솎음·수확 시 작업자 이동을 최소화해 능률 저하를 개선합니다.</li>
+              <li>작업자는 앉은 자리에서 솎아주기와 수확 작업에 집중할 수 있습니다.</li>
             </ul>
           </div>
         </div>
-        <div class="split split--flip reveal">
-          <div class="split-media">
-            <img src="images/greencell/town.jpg" alt="그린셀 타운 확장 모델 조감도" loading="lazy" />
-          </div>
-          <div class="split-body">
-            <h3 class="split-subtitle">그린셀 타운</h3>
-            <p>
-              수요가 늘어나면 컨테이너를 이어 붙여 재배동에 카페동 · 체험동 · 숙소동을
-              더한 복합 단지로 확장할 수 있습니다. 재배를 넘어 체험과 판매까지
-              아우르는 모델입니다.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- SOLUTIONS -->
-    <section class="section products" id="solutions">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-tag">SOLUTIONS</span>
-          <h2 class="section-title">그린셀 솔루션</h2>
-          <p class="section-sub">설비부터 재배 노하우, 창업 지원까지 한 번에 제공합니다.</p>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card product-card--featured reveal">
-            <span class="product-index">01</span>
-            <div class="product-card-body">
-              <span class="product-flag">CORE SOLUTION</span>
-              <h3>컨테이너팜 <em>Container Farm</em></h3>
-              <p>
-                표준 규격 컨테이너에 재배 설비를 통합했습니다. 별도의 부지나 건축 없이
-                설치하고 바로 운영할 수 있으며, 도심·유휴부지 등 좁은 공간에서도 활용할 수 있습니다.
-              </p>
-              <a href="greencell-contact.html" class="product-link">
-                도입 문의 <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-          <div class="product-grid-sub">
-            <article class="product-card reveal">
-              <span class="product-index">02</span>
-              <h3>복합환경제어 <em>ICT Control</em></h3>
-              <p>온도·습도·CO₂·환기·조도를 자동으로 제어하고, 원격으로 상태를 모니터링합니다.</p>
-            </article>
-            <article class="product-card reveal">
-              <span class="product-index">03</span>
-              <h3>백화고 재배 <em>Premium Shiitake</em></h3>
-              <p>고품질 표고버섯(백화고)을 연중 안정적으로 생산하는 재배 레시피를 제공합니다.</p>
-            </article>
-            <article class="product-card reveal">
-              <span class="product-index">04</span>
-              <h3>기술이전 · 창업지원 <em>Tech Transfer</em></h3>
-              <p>재배 기술 교육과 운영 컨설팅으로 창업과 규모 확대를 지원합니다.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- R&D -->
-    <section class="section split-section split-section--dark" id="research">
-      <div class="container">
-        <div class="section-head section-head--dark reveal">
-          <span class="section-tag">R&amp;D</span>
-          <h2 class="section-title">KIST 천연물연구소와 공동 연구</h2>
-        </div>
-        <div class="split reveal">
-          <div class="split-media">
-            <img src="images/greencell/kist.jpg" alt="KIST 강릉분원 천연물연구소 기술이전식" loading="lazy" />
-          </div>
-          <div class="split-body">
-            <p>
-              그린셀은 KIST 강릉분원 천연물연구소와 함께 표고버섯의 항산화능 성분을
-              높이는 재배 기술을 연구해 왔습니다. 2022년 3월 기술이전식과 함께
-              연구소 내에 그린셀을 설치·운영하며 재배 데이터를 축적하고 있습니다.
-            </p>
-          </div>
-        </div>
-        <div class="split split--flip reveal">
-          <div class="split-media">
-            <img src="images/greencell/baekhwago.jpg" alt="그린셀에서 재배한 백화고" loading="lazy" />
-          </div>
-          <div class="split-body">
-            <h3 class="split-subtitle">백화고</h3>
-            <p>
-              갓 표면이 하얗게 갈라지는 최상급 표고버섯입니다. 통제된 환경에서
-              연중 균일한 품질로 재배해, 항산화 성분과 식감을 함께 끌어올립니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY GREENCELL -->
-    <section class="values" id="values">
+    <!-- 왜 그린셀 -->
+    <section class="values" id="why">
       <div class="container">
         <div class="section-head section-head--dark reveal">
           <span class="section-tag">WHY GREENCELL</span>
@@ -229,6 +177,538 @@
             <span class="value-num">04</span>
             <h3>검증된 기술력</h3>
             <p>자동화·환경설비 시공 경험을<br />재배 환경 제어에 적용합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 솔루션 개요 ============ -->
+    <section class="section split-section" id="solutions">
+      <div class="container">
+        <div class="gc-stripe reveal" aria-hidden="true"></div>
+        <div class="section-head reveal">
+          <span class="section-tag">SOLUTIONS</span>
+          <h2 class="section-title">솔루션 개요</h2>
+          <p class="section-sub">
+            그린셀의 설비 · 자동화 시스템 · 재배 노하우 · 브랜드를 한눈에 살펴보세요.
+            아래 항목을 누르면 해당 내용으로 이동합니다.
+          </p>
+        </div>
+        <nav class="gc-toc reveal" aria-label="솔루션 목차">
+          <a href="#unit"><span class="n">01</span><span class="t">컨테이너 한 대로 시작합니다</span></a>
+          <a href="#components"><span class="n">02</span><span class="t">솔루션 구성</span></a>
+          <a href="#nps"><span class="n">03</span><span class="t">NPS TYPE 자동화 시스템</span></a>
+          <a href="#process"><span class="n">04</span><span class="t">스마트팜 자동화 프로세스</span></a>
+          <a href="#env"><span class="n">05</span><span class="t">복합환경 공정</span></a>
+          <a href="#structure"><span class="n">06</span><span class="t">컨테이너팜 내부 구조</span></a>
+          <a href="#tech"><span class="n">07</span><span class="t">핵심 기술 요소</span></a>
+          <a href="#return"><span class="n">08</span><span class="t">예상 수익성</span></a>
+          <a href="#brands"><span class="n">09</span><span class="t">그린셀이 만드는 버섯 브랜드</span></a>
+          <a href="#cheonhwago"><span class="n">10</span><span class="t">천화고 특징</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 01 THE UNIT -->
+    <section class="section split-section" id="unit" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">THE UNIT</span>
+          <h2 class="section-title">컨테이너 한 대로 시작합니다</h2>
+        </div>
+        <div class="split reveal">
+          <div class="split-media">
+            <img src="images/greencell/container.jpg" alt="그린셀 컨테이너팜 외관" loading="lazy" />
+          </div>
+          <div class="split-body">
+            <p>
+              40피트 냉동 컨테이너에 재배 설비와 복합환경제어 시스템을 통합했습니다.
+              별도의 부지나 건축 없이 설치 즉시 운영할 수 있어, 도심이나 유휴부지에서도
+              활용할 수 있습니다.
+            </p>
+            <ul class="split-spec">
+              <li><span>규격</span>40ft 냉동 컨테이너</li>
+              <li><span>외부 치수</span>2,438(W) &times; 2,719(H) &times; 12,200(L) mm</li>
+              <li><span>내부 프레임</span>2,250(W) &times; 2,200(H) &times; 9,900(L) mm</li>
+              <li><span>내부 용적</span>64.5 CBM</li>
+              <li><span>온도 제어</span>5&deg;C ~ 29&deg;C</li>
+              <li><span>습도 제어</span>50 ~ 96% RH</li>
+              <li><span>CO&#8322; 제어</span>500 ~ 5,255 ppm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="split split--flip reveal">
+          <div class="split-media">
+            <img src="images/greencell/town.jpg" alt="그린셀 타운 확장 모델 조감도" loading="lazy" />
+          </div>
+          <div class="split-body">
+            <h3 class="split-subtitle">그린셀 타운</h3>
+            <p>
+              수요가 늘어나면 컨테이너를 이어 붙여 재배동에 카페동 · 체험동 · 숙소동을
+              더한 복합 단지로 확장할 수 있습니다. 재배를 넘어 체험과 판매까지
+              아우르는 모델입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 솔루션 구성 -->
+    <section class="section products" id="components">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">COMPONENTS</span>
+          <h2 class="section-title">솔루션 구성</h2>
+          <p class="section-sub">설비부터 재배 노하우, 창업 지원까지 한 번에 제공합니다.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card product-card--featured reveal">
+            <span class="product-index">01</span>
+            <div class="product-card-body">
+              <span class="product-flag">CORE SOLUTION</span>
+              <h3>컨테이너팜 <em>Container Farm</em></h3>
+              <p>
+                표준 규격 냉동 컨테이너에 재배 설비와 제어 시스템을 통합했습니다.
+                별도의 부지나 건축 없이 설치하고 바로 운영할 수 있으며, 도심·유휴부지 등
+                좁은 공간에서도 활용할 수 있습니다.
+              </p>
+              <a href="greencell-contact.html" class="product-link">
+                도입 문의 <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <div class="product-grid-sub">
+            <article class="product-card reveal">
+              <span class="product-index">02</span>
+              <h3>복합환경제어 <em>ICT Control</em></h3>
+              <p>온도·습도·CO&#8322;·환기·조도를 자동으로 제어하고, 원격으로 상태를 통합 모니터링합니다.</p>
+            </article>
+            <article class="product-card reveal">
+              <span class="product-index">03</span>
+              <h3>자동 이송 시스템 <em>NPS &middot; Non Powered Sliding System</em></h3>
+              <p>배지가 작업자 앞으로 자동 순환 이송되어, 컨베이어 동력부 대비 약 80% 비용을 절감하는 그린셀 특허 기술입니다.</p>
+            </article>
+            <article class="product-card reveal">
+              <span class="product-index">04</span>
+              <h3>자동 침봉 시스템 <em>Auto Watering</em></h3>
+              <p>침봉 전 로드셀로 배지 무게를 측정한 뒤, 무게 데이터에 맞춰 필요한 양의 물·양액을 정량 공급합니다.</p>
+            </article>
+            <article class="product-card reveal">
+              <span class="product-index">05</span>
+              <h3>AI 병원균 감별·격리 <em>AI Detection</em></h3>
+              <p>AI 카메라로 푸른곰팡이 등 병원균을 자동 감별하고, 감염 배지를 즉시 격리해 확산을 막습니다.</p>
+            </article>
+            <article class="product-card reveal">
+              <span class="product-index">06</span>
+              <h3>기술이전 · 창업지원 <em>Tech Transfer</em></h3>
+              <p>재배 기술 교육과 운영 컨설팅으로 창업과 규모 확대를 지원합니다.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 NPS TYPE -->
+    <section class="section split-section" id="nps" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="gc-stripe reveal" aria-hidden="true"></div>
+        <div class="section-head reveal">
+          <span class="section-tag">NPS TYPE</span>
+          <h2 class="section-title">미래농업 자동화 시스템, NPS TYPE</h2>
+          <p class="section-sub">
+            ICT 제어 시스템과 배지 자동 이송을 통해 기존 8~10단계의 수작업 공정을
+            2~3단계로 최소화하는 그린셀만의 특허 기술입니다.
+          </p>
+        </div>
+
+        <div class="gc-type-grid reveal">
+          <div class="gc-type gc-type--nps">
+            <h3>NPS TYPE</h3>
+            <span class="sub">Non Powered Sliding System</span>
+            <p>
+              배지가 동력부와 중력·경사레일을 따라 자동 순환하고, 침봉·급수·병원균 감별까지
+              자동화됩니다. 작업자는 앉은 자리에서 솎음과 수확에만 집중합니다.
+            </p>
+            <ul class="gc-tags">
+              <li>공정 간소화를 통한 인건비 절감</li>
+              <li>기능성 백화고 재배 실현</li>
+              <li>생산물 품질 표준화</li>
+              <li>PERSONAL 스마트팜 실현</li>
+              <li>안정적인 프로그램</li>
+            </ul>
+          </div>
+          <div class="gc-type">
+            <h3>TCM TYPE</h3>
+            <span class="sub">Traditional Cultivation System</span>
+            <p>
+              작업자가 긴 통로를 따라 이동하며 입상·퇴상·침봉·솎음·수확을 수작업으로 진행하는
+              전통 재배 방식입니다. 노동강도가 높고 품질 편차가 큽니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="gc-table-wrap reveal">
+          <table class="gc-table">
+            <thead>
+              <tr>
+                <th scope="col">구분</th>
+                <th scope="col">그린셀 NPS TYPE</th>
+                <th scope="col">일반 재배 (TCM TYPE)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">재배 공정</th>
+                <td class="is-highlight">2~3단계 (자동화)</td>
+                <td>8~10단계 (수작업)</td>
+              </tr>
+              <tr>
+                <th scope="row">배지 이송</th>
+                <td class="is-highlight">동력부 + 중력 자동 순환</td>
+                <td>작업자 수동 이동</td>
+              </tr>
+              <tr>
+                <th scope="row">침봉 방식</th>
+                <td class="is-highlight">자동 정량 침봉 (로드셀 측정)</td>
+                <td>수동 침봉</td>
+              </tr>
+              <tr>
+                <th scope="row">병원균 관리</th>
+                <td class="is-highlight">AI 자동 감별·격리</td>
+                <td>육안 확인</td>
+              </tr>
+              <tr>
+                <th scope="row">품질 편차</th>
+                <td class="is-highlight">표준화</td>
+                <td>큼</td>
+              </tr>
+              <tr>
+                <th scope="row">동력부 구성비</th>
+                <td class="is-highlight">컨베이어 대비 약 80% 절감</td>
+                <td>&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 자동화 프로세스 -->
+    <section class="section products" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">NPS SYSTEM</span>
+          <h2 class="section-title">스마트팜 자동화 프로세스</h2>
+          <p class="section-sub">배지 세척부터 출하까지 8단계 공정을 하나의 컨테이너 안에서 연동합니다.</p>
+        </div>
+        <ul class="gc-proc reveal">
+          <li><span class="s">1</span>배지 세척 / 입상</li>
+          <li><span class="s">2</span>배지 침봉 작업</li>
+          <li><span class="s">3</span>버섯 발이 작업</li>
+          <li><span class="s">4</span>버섯 솎으기 작업</li>
+          <li><span class="s">5</span>버섯 생육</li>
+          <li><span class="s">6</span>버섯 수확</li>
+          <li><span class="s">7</span>버섯 선별</li>
+          <li><span class="s">8</span>버섯 출하</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 05 복합환경 공정 -->
+    <section class="section split-section" id="env" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">ENVIRONMENT</span>
+          <h2 class="section-title">복합환경 공정</h2>
+          <p class="section-sub">원격 관리부터 기계실까지, 재배 환경을 하나의 제어 체계로 묶습니다.</p>
+        </div>
+        <ul class="gc-env reveal">
+          <li>원격 관리 시스템<span>어디서나 상태 확인 · 원격 제어</span></li>
+          <li>복합환경 제어 시스템<span>온·습도 · CO&#8322; · 환기 · 조도 자동 제어</span></li>
+          <li>그린셀 제어 시스템<span>설비 통합 연동 · 자동 살균</span></li>
+          <li>재배사 시스템<span>배지 자동 이송 · 침봉 · 무게 측정</span></li>
+          <li>기계실 시스템<span>공조 · 가습 · 제습 · CO&#8322; · 배풍기</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 내부 구조 -->
+    <section class="section products" id="structure">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">STRUCTURE</span>
+          <h2 class="section-title">컨테이너팜 내부 구조</h2>
+        </div>
+        <dl class="gc-deflist reveal">
+          <div>
+            <dt>배지포트(POT)</dt>
+            <dd>배지 상면에서 버섯을 수확하고 침봉·양액을 공급할 수 있는 거치형 개량 배지포트입니다. 레일에 거치되어 자동 이송 시스템에 적용됩니다.</dd>
+          </div>
+          <div>
+            <dt>작업자 구간</dt>
+            <dd>톱밥 배지가 자동 순환 시스템을 통해 작업자 앞으로 이송되어, 작업자는 앉은 자리에서 솎아주기와 수확을 진행합니다.</dd>
+          </div>
+          <div>
+            <dt>엘리베이터 구간</dt>
+            <dd>순환하는 배지포트를 작업자 높이에 맞춰 다시 상승·순환시켜 주는 구간입니다.</dd>
+          </div>
+          <div>
+            <dt>경사 이송 레일 구간</dt>
+            <dd>경사진 레일을 설치해 자동으로 하강 순환 이송합니다. 전체를 컨베이어 동력부로 구성할 때 대비 약 80% 비용을 절감합니다.</dd>
+          </div>
+          <div>
+            <dt>자동 침봉 구간</dt>
+            <dd>물 또는 양액을 배지의 무게에 따라 정량 공급하는 구간입니다.</dd>
+          </div>
+          <div>
+            <dt>무게 측정 구간</dt>
+            <dd>배지의 무게를 측정해 물·양액의 필요 공급량을 산출하는 구간입니다.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 07 핵심 기술 -->
+    <section class="section split-section" id="tech" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">TECHNOLOGY</span>
+          <h2 class="section-title">핵심 기술 요소</h2>
+        </div>
+        <dl class="gc-deflist reveal">
+          <div>
+            <dt>복합환경제어</dt>
+            <dd>온도·습도에 민감한 버섯 생육에 적합한 수준을 지속 유지하도록 실시간 모니터링·제어하는 자동화 복합환경 시스템입니다.</dd>
+          </div>
+          <div>
+            <dt>환기 시스템</dt>
+            <dd>컨테이너팜 내부 공기의 대류를 촉진하고 내·외부 기체교환을 통해 최적의 대기 상태를 유지합니다.</dd>
+          </div>
+          <div>
+            <dt>스마트 재배 모델링</dt>
+            <dd>표고·화고버섯 재배에 필요한 식물공장형 컨테이너팜으로, 각종 설비와 제어 시스템의 통합 연동·자동 살균 등 ICT 기반 통합 기술을 적용한 재배 시스템입니다.</dd>
+          </div>
+          <div>
+            <dt>자동 이송 시스템</dt>
+            <dd>작업자가 긴 통로를 이동하지 않고 솎아내기·수확 등 각종 작업을 할 수 있도록 배지가 작업자 앞으로 자동 이송되는 센서 기반 자동화 시스템입니다.</dd>
+          </div>
+          <div>
+            <dt>자동 침봉 시스템</dt>
+            <dd>침봉 전 로드셀로 무게를 측정한 뒤, 배지의 무게값 데이터를 전송해 원하는 무게가 되도록 물을 주입하는 자동화 시스템입니다.</dd>
+          </div>
+          <div>
+            <dt>AI 활용 병원균 감별</dt>
+            <dd>AI 카메라로 버섯에서 발생하는 병원균(푸른곰팡이)을 자동 감별하고, 감염된 배지를 즉시 격리해 다른 버섯으로의 확산을 막습니다.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 08 예상 수익성 -->
+    <section class="section products" id="return">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">RETURN</span>
+          <h2 class="section-title">예상 수익성 (그린셀 1대 기준)</h2>
+        </div>
+        <ul class="gc-figures reveal">
+          <li><strong>배지 적재 수량</strong><span>750개 &middot; 배지당 생산량 0.7kg / 2개월(3주기)</span></li>
+          <li><strong>총 생산량</strong><span>750개 &times; 0.7kg = 약 525kg</span></li>
+          <li><strong>2개월 총 매출액</strong><span>525kg &times; 평균 20,000원/kg = 약 <b>1,050만원</b></span></li>
+          <li><strong>2개월 운용 비용</strong><span>약 227.5만원</span></li>
+          <li><strong>월 예상 수익</strong><span>약 <b>411만원</b></span></li>
+        </ul>
+        <p class="gc-disclaimer">※ 위 수치는 그린셀 브로슈어의 예시 산정 기준이며, 재배 환경·작물·시세에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- 09 버섯 브랜드 -->
+    <section class="section split-section" id="brands" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="gc-stripe reveal" aria-hidden="true"></div>
+        <div class="section-head reveal">
+          <span class="section-tag">BRANDS</span>
+          <h2 class="section-title">그린셀이 만드는 최상의 버섯 브랜드</h2>
+        </div>
+        <div class="gc-brand-grid reveal">
+          <div class="gc-brand">
+            <span class="gc-brand-badge">천화고 &middot; 백화고버섯</span>
+            <h3>천화고 <em>유기농 기능성 향상 백화고</em></h3>
+            <p>
+              최적의 생육 시스템을 통해 재배한 최상의 기능성 표고버섯 &lsquo;백화고&rsquo;입니다.
+              갓 표면이 하얗게 갈라지는 최상급 표고로, 기능성(항산화) 증진 기술로 재배해
+              건강에 이로움을 더합니다.
+            </p>
+          </div>
+          <div class="gc-brand">
+            <span class="gc-brand-badge">참이고 &middot; 표고버섯</span>
+            <h3>참이고 <em>친 소비자형 표고버섯</em></h3>
+            <p>
+              가성비 좋은 친(親) 소비자형 표고버섯입니다. 그린셀의 표준화된 재배 환경에서
+              연중 균일한 품질로 생산해, 일상 식탁에 부담 없이 올릴 수 있습니다.
+            </p>
+          </div>
+        </div>
+        <p class="gc-disclaimer">
+          ※ 천화고 · 참이고는 준비 중인 네이버 스마트스토어를 통해 판매될 예정입니다.
+          상단 <strong>STORE</strong> 메뉴에서 스토어로 이동할 수 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 10 천화고 특징 -->
+    <section class="section products" id="cheonhwago">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">FEATURES</span>
+          <h2 class="section-title">천화고 특징</h2>
+          <p class="section-sub">저칼로리 · 고식이섬유 식품인 표고버섯이 가진 대표적인 기능성입니다.</p>
+        </div>
+
+        <div class="gc-benefits reveal">
+          <div class="gc-benefit"><strong>항암 · 뼈 건강</strong><span>렌티난 · 비타민 D</span></div>
+          <div class="gc-benefit"><strong>성인병 예방</strong><span>저칼로리 · 식이섬유</span></div>
+          <div class="gc-benefit"><strong>콜레스테롤 저하</strong><span>에리타데닌</span></div>
+          <div class="gc-benefit"><strong>항바이러스 작용</strong><span>&beta;-glucan</span></div>
+        </div>
+
+        <div class="gc-nutri reveal">
+          <article>
+            <h3>식이섬유 <em>DIETARY FIBER</em></h3>
+            <p>표고버섯은 저칼로리 식품으로 식이섬유가 다량 함유되어 있어 위와 소장의 기능을 원활하게 하고, 비만·당뇨·심장병·변비 등에 도움을 줍니다.</p>
+          </article>
+          <article>
+            <h3>렌티난 <em>LENTINAN</em></h3>
+            <p>항암·항종양 다당체 물질인 렌티난이 함유되어 있어 암 치료에 도움을 주며, 면역력 증강 및 암세포 증식 억제 물질로 연구·개발되어 있습니다.</p>
+          </article>
+          <article>
+            <h3>비타민 B1 · B2 · D <em>VITAMINS</em></h3>
+            <p>비타민 B1·B2·D가 야채보다 2배 이상 함유되어 있고, 에리타데닌과 함께 뼈를 튼튼하게 하며, 비타민 D가 칼슘의 흡수를 촉진합니다.</p>
+          </article>
+          <article>
+            <h3>구아닐산 <em>GUANYLIC ACID</em></h3>
+            <p>맛을 내는 핵산계 조미료 성분입니다. 요리에 넣으면 감칠맛이 나며, 천연 조미료로 가공되기도 합니다. 특유의 향은 렌치오닌에 의한 것입니다.</p>
+          </article>
+          <article>
+            <h3>에리타데닌 <em>ERITADENINE</em></h3>
+            <p>혈액 중의 콜레스테롤을 제거해 혈압을 낮추는 작용을 하므로, 고혈압 예방에 도움을 줍니다.</p>
+          </article>
+          <article>
+            <h3>단백질 &beta;-glucan <em>BETA-GLUCAN</em></h3>
+            <p>표고버섯 포자에서는 인터페론 유발물질이 분리되며, 이 중 2본쇄 RNA가 인플루엔자 바이러스의 감염을 예방하는 효과가 있는 것으로 발표되었습니다.</p>
+          </article>
+        </div>
+
+        <div class="gc-note-box reveal">
+          <strong>특히, 천화고 표고버섯은</strong>
+          <p>
+            생 표고버섯보다 건 표고버섯의 향이 더 강할 뿐 아니라, 자연 햇빛에 건조하면
+            선도물질(에르고스테롤)이 비타민 D의 함량으로 3~4배까지 변환됩니다. 그린셀은
+            여기에 기능성(항산화) 증진 기술을 더해 재배함으로써, 표고가 가진 좋은 성분을
+            한층 끌어올립니다.
+          </p>
+        </div>
+
+        <div class="section-head reveal" style="margin-top:72px;">
+          <span class="section-tag">RECIPES</span>
+          <h2 class="section-title">천화고 요리 이야기</h2>
+          <p class="section-sub">천연 조미료 역할을 하여 다양한 요리에 감칠맛을 더하고, 쫄깃한 식감으로 풍미를 살려 줍니다.</p>
+        </div>
+        <ul class="gc-recipes reveal">
+          <li>표고버섯 크림스프</li>
+          <li>표고버섯 볶음밥</li>
+          <li>표고버섯 버터구이</li>
+          <li>표고버섯 밥</li>
+          <li>표고버섯 탕수육</li>
+          <li>표고버섯 장조림</li>
+          <li>표고버섯 잡채</li>
+          <li>표고버섯 전</li>
+          <li>표고버섯 볶음</li>
+          <li>표고버섯 파스타</li>
+          <li>표고버섯 소고기 김치찌개</li>
+          <li>표고버섯 강정</li>
+        </ul>
+
+        <div class="section-head reveal" style="margin-top:72px;">
+          <span class="section-tag">STORAGE</span>
+          <h2 class="section-title">천화고 보관 방법</h2>
+        </div>
+        <div class="gc-effect reveal">
+          <div class="gc-effect-col">
+            <h3>생표고 &mdash; 냉장 보관</h3>
+            <ul>
+              <li>흐르는 물에 살짝 헹궈 흙이나 이물질을 제거합니다.</li>
+              <li>종이타월이나 키친타월로 물기를 부드럽게 닦아 냅니다.</li>
+              <li>하나씩 소분 포장해 냉장고 채소칸에 보관하면 4~7일 정도 신선하게 유지됩니다.</li>
+            </ul>
+          </div>
+          <div class="gc-effect-col">
+            <h3>생표고 &mdash; 냉동 보관</h3>
+            <ul>
+              <li>끓는 물에 표고버섯을 넣고 1~2분 정도 살짝 데칩니다.</li>
+              <li>데친 표고를 찬물에 담가 급격히 식힙니다.</li>
+              <li>체에 밭쳐 물기를 완전히 제거합니다.</li>
+              <li>냉동 보관 용기에 담아 냉동실에 보관하면 1~2개월 정도 유지됩니다.</li>
+            </ul>
+          </div>
+          <div class="gc-effect-col">
+            <h3>보관 시 주의할 점</h3>
+            <ul>
+              <li>습도 관리 &mdash; 표고버섯은 습기에 약하므로 습도가 높은 곳을 피합니다.</li>
+              <li>직사광선 차단 &mdash; 직사광선에 노출되면 변색될 수 있어 어두운 곳에 보관합니다.</li>
+              <li>냄새 흡수 &mdash; 주변 냄새를 쉽게 흡수하므로 다른 식재료와 떨어뜨려 보관합니다.</li>
+            </ul>
+          </div>
+          <div class="gc-effect-col">
+            <h3>건표고 보관</h3>
+            <ul>
+              <li>밀폐용기 또는 비닐봉지에 넣어 공기가 유입되지 않도록 냉장·냉동실에 보관합니다.</li>
+              <li>직사광선을 받으면 버섯파리 등 해충이 발생할 수 있으므로 직사광선을 피해 보관합니다.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="gc-disclaimer">※ 위 내용은 표고버섯 일반에 대한 자료를 바탕으로 하며, 특정 질병의 예방·치료 효과를 보장하지 않습니다.</p>
+      </div>
+    </section>
+
+    <!-- 연구개발 -->
+    <section class="section split-section split-section--dark" id="research">
+      <div class="container">
+        <div class="section-head section-head--dark reveal">
+          <span class="section-tag">R&amp;D</span>
+          <h2 class="section-title">KIST도 인정한 그린셀의 기술력</h2>
+        </div>
+        <div class="split reveal">
+          <div class="split-media">
+            <img src="images/greencell/kist.jpg" alt="KIST 강릉분원 천연물연구소 기술이전 조인식" loading="lazy" />
+          </div>
+          <div class="split-body">
+            <p>
+              2022년 3월 15일, (주)피앤피코리아는 과학기술 인프라 구축과 고부가가치 특화상품 개발을
+              목적으로 설립된 KIST 강릉분원 천연물연구소와 업무협약(기술이전 조인)을 체결했습니다.
+            </p>
+            <p>
+              천연물연구소는 암 치료용 표고버섯 재배를 위해 컨테이너 스마트팜 그린셀과 협력하고 있으며,
+              최적의 재배 환경을 유지하는 그린셀의 특허 기술력을 인정해 연구소 내에 그린셀을 설치·운영하며
+              재배 데이터를 축적하고 있습니다. 양측은 앞으로도 암 치료와 난치병 치료를 위한 연구를
+              지속해 나갈 예정입니다.
+            </p>
+          </div>
+        </div>
+        <div class="split split--flip reveal">
+          <div class="split-media">
+            <img src="images/greencell/baekhwago.jpg" alt="그린셀에서 재배한 백화고" loading="lazy" />
+          </div>
+          <div class="split-body">
+            <h3 class="split-subtitle">백화고</h3>
+            <p>
+              갓 표면이 하얗게 갈라지는 최상급 표고버섯입니다. 통제된 환경에서 연중 균일한 품질로
+              재배해, 항산화 성분과 식감을 함께 끌어올립니다. 그린셀은 기능성(항산화) 증진 기술로
+              백화고를 재배해 프리미엄 시장을 구축하고 있습니다.
+            </p>
           </div>
         </div>
       </div>

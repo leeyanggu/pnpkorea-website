@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | GreenCell</title>
   <meta name="description" content="Get in touch about GreenCell container farms, technology transfer and start-up support, or premium shiitake supply. Phone, e-mail and KakaoTalk also available." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="has-topbar brand-greencell">
@@ -32,10 +30,15 @@
         <img src="images/greencelllogo-light.png" alt="GreenCell" class="logo-img" />
       </a>
       <nav class="nav" id="primaryNav">
-        <a href="greencell.en.html#intro">About</a>
-        <a href="greencell.en.html#solutions">Solutions</a>
-        <a href="greencell.en.html#research">R&amp;D</a>
-        <a href="greencell.en.html#values">Why GreenCell</a>
+        <a href="greencell.en.html#about">About</a>
+        <span class="nav-group">
+          <a href="greencell.en.html#solutions">Solutions</a>
+          <span class="nav-drop">
+            <a href="greencell.en.html#solutions">Solutions overview</a>
+            <a href="greencell.en.html#research">R&amp;D</a>
+          </span>
+        </span>
+        <a href="https://sell.smartstore.naver.com/home" target="_blank" rel="noopener noreferrer">STORE</a>
         <a href="greencell-contact.en.html" class="is-active">Contact</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
